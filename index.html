@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/one.css" />
+		<link rel="stylesheet" href="css/two.css" />
+		<link rel="stylesheet" href="css/three.css" />
+		<!--<link rel="stylesheet" href="font/demo-files/demo.css" />-->
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css"/>
+		<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header>
+			<div>
+				<img src="img/档期明细_03.png" alt="" />
+				<p><img src="img/档期明细_05.png"/><b>Kinson</b></p>
+			</div>
+		</header>
+		<div id="div"></div>
+		<div id="box">
+			<div id="box-con">
+				<div id="left">
+					<ul class="nav">
+						<li class="top">
+							<ul>
+								<li class="first" >
+									<i  class="icon icon-airplane"></i>
+										<img src="img/档期明细_10.png" alt="" />
+										<a ui-sref="one"><span>店铺管理</span></a>
+										<i class="glyphicon glyphicon-chevron-down" ></i>
+								</li>
+								<li class="son">
+									客片信息
+								</li>
+								<li class="son">商家作品</li>
+								<li class="son">套系管理</li>
+							</ul>
+						</li>
+						<li class="top">
+							<ul>
+								<li class="first">									
+										<img src="img/服务管理_数据备份_03.png" alt="" />
+										<a ui-sref="two"><span>服务管理</span></a>
+										<!--<img src="img/档期明细_12.png" class="down"/>-->
+										<i class="glyphicon glyphicon-chevron-down" ></i>
+								</li>
+								<li class="son">所有订单</li>
+								<li class="son">摄影排期</li>
+								<li class="son">选片排期</li>
+								<li class="son">定稿排期</li>
+								<li class="son">取件排期</li>
+								<li class="son">代取件排期</li>
+								<li class="son">已完成订单</li>
+								<li class="son">已退单</li>
+								<li class="son">数据备份</li>
+							</ul>
+						</li>
+						<li class="top">
+							<ul>
+								<li class="first">
+									<img src="img/档期明细_18.png" alt="" />
+									<a ui-sref="three"><span>客片管理</span></a>
+								</li>
+							</ul>
+						</li>
+						<li class="top">
+							<ul>
+								<li class="first">
+									
+										<img src="img/档期明细_16.png" alt="" />
+										<a ui-sref="four"><span>档期管理</span></a>
+										<i class="glyphicon glyphicon-chevron-down" ></i>
+									
+								</li>
+								<li class="son">档期一流</li>
+								<li class="son">档期明细</li>
+							</ul>
+						</li>						
+						<li class="top">
+							<ul>
+								
+								<li class="first">
+									<img src="img/档期明细_22.png"/>
+									<a ui-sref="five"><span>分享统计</span></a>
+								</li>
+							</ul>
+						</li>
+						<li class="top">
+							<ul>								
+								<li class="first">
+									<img src="img/档期明细_24.png" alt="" />
+									<a ui-sref="six"><span>潜客管理</span></a>
+								</li>
+							</ul>
+						</li>
+						<li class="top">
+							<ul>
+								<li class="first">
+									
+										<img src="img/档期明细_26.png" alt="" />
+										<a ui-sref="seven"><span>店铺管理</span></a>
+										<i class="glyphicon glyphicon-chevron-down" ></i>
+									
+								</li>
+								<li class="son">用户管理</li>
+								<li class="son">部门&人员</li>
+								<li class="son">服务设置</li>
+								<li class="son">订单来源设置</li>
+								<li class="son">分享设置</li>
+								<li class="son">拍摄档期分类</li>
+								<li class="son">个人信息</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="right" ui-view="">
+					
+				</div>		
+			</div>
+			
+		</div>
+		<p id="bottom">上海杜美投资管理中心 版权所有@沪ICP备14046404号</p>
+		
+		<script src="js/angular-1.4.6.min.js"></script>
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/angular-ui-router.js"></script>
+		<script src="route.js"></script>
+		<script>
+			$(function(){
+				//点击下拉
+				$.each($("i"),function(){
+					$(this).click(function(){
+						$(this).parent("li").nextAll().toggle();
+					})
+				})
+				//移入变色
+				$.each($(".first"),function(){
+					
+					$(this).mouseover(function(){
+						$(this).css("background","#FF6577");
+					})
+					$(this).mouseleave(function(){
+						$(this).css("background","#fff");
+					})				
+				})
+
+				$.each($(".son"),function(){
+					
+					$(this).mouseover(function(){
+						$(this).css("background","#FF6577");
+					})
+					$(this).mouseleave(function(){
+						$(this).css("background","#fff");
+					})				
+				})				
+			})
+		</script>
+	</body>
+</html>
